@@ -38,6 +38,9 @@
 #import <UIKit/UIKit.h>
 #import "RTLabel.h"
 
-@interface DemoTableViewController : UITableViewController <RTLabelDelegate>
+@interface DemoTableViewController : UIViewController <RTLabelDelegate,UITableViewDelegate,UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
+
 @end
