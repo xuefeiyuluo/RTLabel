@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Demo Table View Controller-->
@@ -19,9 +21,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ueo-yA-vXX">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="vXZ-lx-hvc" id="ITl-rM-hsa"/>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="n6D-bG-6ai"/>
@@ -29,14 +28,32 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ueo-yA-vXX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="4Vt-zU-cb3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ueo-yA-vXX" secondAttribute="trailing" constant="-16" id="IzH-6Z-Mfb"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ueo-yA-vXX" secondAttribute="bottom" id="Uph-Zo-cXT"/>
+                            <constraint firstItem="ueo-yA-vXX" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="riq-P5-JsQ"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="ueo-yA-vXX"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="4Vt-zU-cb3"/>
+                                <exclude reference="IzH-6Z-Mfb"/>
+                                <exclude reference="riq-P5-JsQ"/>
+                                <exclude reference="Uph-Zo-cXT"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="ueo-yA-vXX"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="4Vt-zU-cb3"/>
+                                <include reference="IzH-6Z-Mfb"/>
+                                <include reference="riq-P5-JsQ"/>
+                                <include reference="Uph-Zo-cXT"/>
                             </mask>
                         </variation>
                     </view>
