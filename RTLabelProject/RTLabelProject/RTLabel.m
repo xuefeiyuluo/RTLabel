@@ -885,9 +885,6 @@ static const NSInteger NEG_ONE = -1;
             {
                 data = [data stringByReplacingOccurrencesOfString:delimiter withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(last_position, position+delimiter.length-last_position)];
             }
-            
-            data = [data stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"];
-            data = [data stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"];
         }
         
         if ([text rangeOfString:@"</"].location==0)
@@ -939,7 +936,8 @@ static const NSInteger NEG_ONE = -1;
         }
         last_position = position;
     }
-    
+    data = [data stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"];
+    data = [data stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"];
     return [RTLabelExtractedComponent rtLabelExtractComponentsWithTextComponent:components plainText:data];
 }
 
